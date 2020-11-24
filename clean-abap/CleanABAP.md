@@ -1525,8 +1525,7 @@ ENDIF.
 
 | Smell Code |  Beschreibung   |  Refactorisierung |
 |------------|-----------------------|-------------|
-| Repeated Switches   | Zu viele logische Bedingungen. Main Flow ist nicht mehr von Exceptional Flow zu unterscheiden. 
-                       Es führt zu langen Methoden, die warscheinlich später SRP brechen.| Replace Conditional with Polymorphism |
+| Repeated Switches   | Zu viele logische Bedingungen. Main Flow ist nicht mehr von Exceptional Flow zu unterscheiden. Es führt zu langen Methoden, die warscheinlich später SRP brechen.| Replace Conditional with Polymorphism |
 | Primitive Obsession | Es wird nach Type Codes geprüft, anstatt von Objekten zu verwenden| Replace Primitive with Object/Replace Type Code with Subclasses |
 
 ### Keep the nesting depth low
