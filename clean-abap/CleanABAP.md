@@ -192,44 +192,44 @@ The [Cheat Sheet](cheat-sheet/CheatSheet.md) is a print-optimized version.
   - [Indent in-line declarations like method calls](#indent-in-line-declarations-like-method-calls)
   - [Don't align type clauses](#dont-align-type-clauses)
 - [Testing](#testing)
-  - [Principles](#principles)
-    - [Write testable code](#write-testable-code)
+  - [Principles](#principles) CCE121, Right B.I.C.E.P., F.I.R.S.T. (CCE132), RD123, ADE23, TDD, Naming, Test-In-Box, Flow, Pizza
+    - [Write testable code](#write-testable-code) CCE122, RD123
     - [Enable others to mock you](#enable-others-to-mock-you)
-    - [Readability rules](#readability-rules)
+    - [Readability rules](#readability-rules) CCE124, CCE18
     - [Don't make copies or write test reports](#dont-make-copies-or-write-test-reports)
     - [Test publics, not private internals](#test-publics-not-private-internals)
     - [Don't obsess about coverage](#dont-obsess-about-coverage)
-  - [Test Classes](#test-classes)
-    - [Call local test classes by their purpose](#call-local-test-classes-by-their-purpose)
+  - [Test Classes](#test-classes) IPE29
+    - [Call local test classes by their purpose](#call-local-test-classes-by-their-purpose) CCE25
     - [Put tests in local classes](#put-tests-in-local-classes)
     - [Put help methods in help classes](#put-help-methods-in-help-classes)
     - [How to execute test classes](#how-to-execute-test-classes)
   - [Code Under Test](#code-under-test)
-    - [Name the code under test meaningfully, or default to CUT](#name-the-code-under-test-meaningfully-or-default-to-cut)
+    - [Name the code under test meaningfully, or default to CUT](#name-the-code-under-test-meaningfully-or-default-to-cut) CCE17, CCE26, CCE27
     - [Test against interfaces, not implementations](#test-against-interfaces-not-implementations)
     - [Extract the call to the code under test to its own method](#extract-the-call-to-the-code-under-test-to-its-own-method)
   - [Injection](#injection) 
     - [Use dependency inversion to inject test doubles](#use-dependency-inversion-to-inject-test-doubles) ADE127
     - [Consider to use the tool ABAP test double](#consider-to-use-the-tool-abap-test-double)
     - [Exploit the test tools](#exploit-the-test-tools)
-    - [Use test seams as temporary workaround](#use-test-seams-as-temporary-workaround)
+    - [Use test seams as temporary workaround](#use-test-seams-as-temporary-workaround) CCE27
     - [Use LOCAL FRIENDS to access the dependency-inverting constructor](#use-local-friends-to-access-the-dependency-inverting-constructor)
     - [Don't misuse LOCAL FRIENDS to invade the tested code](#dont-misuse-local-friends-to-invade-the-tested-code)
     - [Don't change the productive code to make the code testable](#dont-change-the-productive-code-to-make-the-code-testable)
     - [Don't sub-class to mock methods](#dont-sub-class-to-mock-methods)
     - [Don't mock stuff that's not needed](#dont-mock-stuff-thats-not-needed)
     - [Don't build test frameworks](#dont-build-test-frameworks)
-  - [Test Methods](#test-methods)
-    - [Test method names: reflect what's given and expected](#test-method-names-reflect-whats-given-and-expected)
-    - [Use given-when-then](#use-given-when-then)
-    - ["When" is exactly one call](#when-is-exactly-one-call)
+  - [Test Methods](#test-methods) CCE130, IPE72, IPE83
+    - [Test method names: reflect what's given and expected](#test-method-names-reflect-whats-given-and-expected) CCE25, CCE17
+    - [Use given-when-then](#use-given-when-then) CCE27
+    - ["When" is exactly one call](#when-is-exactly-one-call) CCE130
     - [Don't add a TEARDOWN unless you really need it](#dont-add-a-teardown-unless-you-really-need-it)
   - [Test Data](#test-data)
     - [Make it easy to spot meaning](#make-it-easy-to-spot-meaning)
     - [Make it easy to spot differences](#make-it-easy-to-spot-differences)
     - [Use constants to describe purpose and importance of test data](#use-constants-to-describe-purpose-and-importance-of-test-data)
   - [Assertions](#assertions)
-    - [Few, focused assertions](#few-focused-assertions)
+    - [Few, focused assertions](#few-focused-assertions) CCE130
     - [Use the right assert type](#use-the-right-assert-type)
     - [Assert content, not quantity](#assert-content-not-quantity)
     - [Assert quality, not content](#assert-quality-not-content)
