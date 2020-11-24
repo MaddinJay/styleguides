@@ -1568,6 +1568,13 @@ IF <this>.
 | IP  |      E      |  64 |  Printed | 
 | IP  |      E      |  70 |  Printed |  
 
+| Smell Code |  Beschreibung   |  Refactorisierung |
+|------------|-----------------------|-------------|
+| Repeated Switches   | Zu viele logische Bedingungen. Main Flow ist nicht mehr von Exceptional Flow zu unterscheiden. Es führt zu langen Methoden, die warscheinlich später SRP brechen.| Replace Conditional with Polymorphism |
+| Primitive Obsession | Es wird nach Type Codes geprüft, anstatt von Objekten zu verwenden| Replace Primitive with Object/Replace Type Code with Subclasses |
+| Long Functions | Nested Conditions führen gleichzeitig zu langen Methoden| Extract Method/Extract Object/Replace Conditional with Polymorphism |
+| Nested Conditions| Zu viele logische Ausdrücken und Controll Flows innerhalb einer Methode.  | Replace Conditional with Polymorphism/Introduce Null Object/ Decompose Conditional/ Introduce Guard Statement/ Reverse Conditional|
+
 ## Regular expressions
 
 > [Clean ABAP](#clean-abap) > [Content](#content) > [This section](#regular-expressions)
