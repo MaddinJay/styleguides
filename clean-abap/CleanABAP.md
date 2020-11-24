@@ -2076,6 +2076,17 @@ aggregate_values(
     result = DATA(sum) ).
 ```
 
+| Buch  |      Sprache      |  Seite | Buchfomat |
+|------------|------------|-----------|--------------|
+| CC  |      E      |  1527 | Kindle |
+| CC  |      E      |  1496 | Kindle |
+| CC  |      E      |  1430 | Kindle |
+| IP  |      E      |  79 | Printed |
+| IP  |      E      |  84 | Printed |
+| IP  |      E      |  95 | Printed | 
+| IP  |      E      |  91 | Printed |
+
+
 #### Omit the optional keyword EXPORTING
 
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Methods](#methods) > [Calls](#calls) > [This section](#omit-the-optional-keyword-exporting)
@@ -2098,6 +2109,15 @@ modify->update(
     data           = item
     changed_fields = changed_fields ).
 ```
+
+| Buch  |      Sprache      |  Seite | Buchfomat |
+|------------|------------|-----------|--------------|
+| CC  |      E      |  1527 | Kindle |
+| IP  |      E      |  79 | Printed |
+| IP  |      E      |  84 | Printed |
+| IP  |      E      |  95 | Printed | 
+| IP  |      E      |  91 | Printed |
+
 
 #### Omit the parameter name in single parameter calls
 
@@ -2122,6 +2142,14 @@ car->drive( speed = 50 ).
 update( asynchronous = abap_true ).
 ```
 
+| Buch  |      Sprache      |  Seite | Buchfomat |
+|------------|------------|-----------|--------------|
+| CC  |      E      |  1496 | Kindle |
+| CC  |      E      |  1430 | Kindle |
+| IP  |      E      |  79 | Printed |
+| IP  |      E      |  53 | Printed |
+| IP  |      E      |  57 |  Printed |
+
 #### Omit the self-reference me when calling an instance method
 
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Methods](#methods) > [Calls](#calls) > [This section](#omit-the-self-reference-me-when-calling-an-instance-method)
@@ -2138,6 +2166,12 @@ instead of the needlessly longer
 " anti-pattern
 DATA(sum) = me->aggregate_values( values ).
 ```
+
+| Buch  |      Sprache      |  Seite | Buchfomat |
+|------------|------------|-----------|--------------|
+| CC  |      E      |  1496 | Kindle |
+| CC  |      E      |  1326 | Kindle |
+| IP  |      E      |  57 |  Printed | 
 
 ### Methods: Object orientation
 
@@ -2163,6 +2197,12 @@ CLASS-METHODS create_instance
     VALUE(result) TYPE REF TO /clean/blog_post.
 ```
 
+| Buch  |      Sprache      |  Seite | Buchfomat |
+|------------|------------|-----------|--------------|
+| CC  |      E      |  1496 | Kindle |
+| IP  |      E      |  81 |  Printed | 
+
+
 #### Public instance methods should be part of an interface
 
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Methods](#methods) > [Methods: Object orientation](#methods-object-orientation) > [This section](#public-instance-methods-should-be-part-of-an-interface)
@@ -2180,6 +2220,9 @@ which will never have an alternative implementation and will never be mocked in 
 
 > [Interfaces vs. abstract classes](sub-sections/InterfacesVsAbstractClasses.md)
 describes why this also applies to classes that overwrite inherited methods.
+
+| IP  |      E      |  26 |  Printed | 
+| IP  |      E      |  83 |  Printed | 
 
 ### Parameter Number
 
@@ -2225,6 +2268,20 @@ Many parameters are an indicator that the method may do more than one thing.
 
 You can reduce the number of parameters by combining them into meaningful sets with structures and objects.
 
+
+| Buch  |      Sprache      |  Seite | Buchfomat |
+|------------|------------|-----------|--------------|
+| CC  |      E      |  1419 | Kindle |
+| CC  |      E      |  1430 | Kindle |
+| CC  |      E      |  1453 | Kindle |
+| CC  |      E      |  1471 | Kindle |
+| CC  |      E      |  1479 | Kindle |
+| CC  |      E      |  1393 | Kindle |
+| CC  |      E      |  1487 | Kindle |
+| IP  |      E      |  53 |  Printed |
+| IP  |      E      |  57 |  Printed | 
+| IP  |      E      |  79 | Printed |
+
 #### Split methods instead of adding OPTIONAL parameters
 
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Methods](#methods) > [Parameter Number](#parameter-number) > [This section](#split-methods-instead-of-adding-optional-parameters)
@@ -2252,6 +2309,14 @@ Optional parameters confuse callers:
 
 Multiple methods with specific parameters for the use case avoid this confusion by giving clear guidance which parameter combinations are valid and expected.
 
+
+| Buch |      Sprache      |  Seite | Buchfomat |
+|----- |------------|-----------|--------------|
+| CC   |      E      |  1306 | Kindle |
+| CC   |      E      |  3415 | Kindle |
+| CC   |      E      |  1393 | Kindle |
+| IP   |      E      |  56 | Printed |
+
 #### Use PREFERRED PARAMETER sparingly
 
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Methods](#methods) > [Parameter Number](#parameter-number) > [This section](#use-preferred-parameter-sparingly)
@@ -2260,6 +2325,17 @@ The addition `PREFERRED PARAMETER` makes it hard to see which parameter is actua
 making it harder to understand the code.
 Minimizing the number of parameters, especially optional ones,
 automatically reduces the need for `PREFERRED PARAMETER`.
+
+| Buch  |      Sprache      |  Seite | Buchfomat |
+|------------|------------|-----------|--------------|
+| CC  |      E      |  1419 | Kindle |
+| CC  |      E      |  1430 | Kindle |
+| CC  |      E      |  1453 | Kindle |
+| CC  |      E      |  1471 | Kindle |
+| CC  |      E      |  1479 | Kindle |
+| CC  |      E      |  1393 | Kindle |
+| IP  |      E      |  53 |  Printed |
+| IP  |      E      |  57 |  Printed | 
 
 #### RETURN, EXPORT, or CHANGE exactly one parameter
 
@@ -2327,6 +2403,16 @@ METHODS check_and_report
     VALUE(result)     TYPE check_result.
 ```
 
+| Buch  |      Sprache      |  Seite | Buchfomat |
+|------------|------------|-----------|--------------|
+| CC  |      E      |  1419 | Kindle |
+| CC  |      E      |  1430 | Kindle |
+| CC  |      E      |  1306 | Kindle |
+| IP  |      E      |  95 | Printed | 
+| IP  |      E      |  93 |  Printed | 
+| IP  |      E      |  87 |  Printed |
+| IP  |      E      |  91 | Printed |
+
 ### Parameter Types
 
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Methods](#methods) > [This section](#parameter-types)
@@ -2364,6 +2450,16 @@ square(
 
 `RETURNING` not only makes the call shorter,
 it also allows method chaining and prevents [same-input-and-output errors](#take-care-if-input-and-output-could-be-the-same).
+
+| Buch  |      Sprache      |  Seite | Buchfomat |
+|------------|------------|-----------|--------------|
+| CC  |      E      |  1419 | Kindle |
+| CC  |      E      |  1430 | Kindle |
+| CC  |      E      |  1306 | Kindle |
+| CC  |      E      |  1527 | Kindle |
+| CC  |      E      |  1542 | Kindle |
+| IP  |      E      |  84 | Printed |
+| IP  |      E      |  79 | Printed |
 
 #### RETURNING large tables is usually okay
 
@@ -2406,6 +2502,14 @@ get_large_table( IMPORTING result = DATA(my_table) ).
 > both of whom suggest that large tables should be EXPORTED by reference to avoid performance deficits.
 > We consistently failed to reproduce any performance and memory deficits
 > and received notice about kernel optimization that generally improves RETURNING performance.
+
+| Buch  |      Sprache      |  Seite | Buchfomat |
+|------------|------------|-----------|--------------|
+| CC  |      E      |  1527 | Kindle |
+| CC  |      E      |  1430 | Kindle |
+| IP  |      E      |  95 | Printed | 
+| IP  |      E      |  91 | Printed | 
+| IP  |      E      |  84 | Printed | 
 
 #### Use either RETURNING or EXPORTING or CHANGING, but not a combination
 
@@ -2459,6 +2563,11 @@ METHODS build_tree
   RETURNING
     VALUE(result) TYPE REF TO tree.
 ```
+| Buch  |      Sprache      |  Seite | Buchfomat |
+|------------|------------|-----------|--------------|
+| CC  |      E      |  1527 | Kindle |
+| CC  |      E      |  1542 | Kindle |
+| IP  |      E      |  79 | Printed |
 
 #### Use CHANGING sparingly, where suited
 
@@ -2483,6 +2592,14 @@ ENDMETHOD.
 
 Do not force your callers to introduce unnecessary local variables only to supply your `CHANGING` parameter.
 Do not use `CHANGING` parameters to initially fill a previously empty variable.
+
+| Buch  |      Sprache      |  Seite | Buchfomat |
+|------------|------------|-----------|--------------|
+| CC  |      E      |  1527 | Kindle |
+| CC  |      E      |  1505 | Kindle |
+| CC  |      E      |  1430 | Kindle |
+| IP  |      E      |  53 |  Printed | 
+| IP  |      E      |  57 |  Printed | 
 
 #### Split method instead of Boolean input parameter
 
@@ -2527,6 +2644,14 @@ METHODS set_is_deleted
 > [2](https://silkandspinach.net/2004/07/15/avoid-boolean-parameters/)
 > [3](http://jlebar.com/2011/12/16/Boolean_parameters_to_API_functions_considered_harmful..html)
 
+| Buch       | Sprache    |  Seite    | Buchfomat    |
+|------------|------------|-----------|--------------|
+| CC         |      E     |  1527     | Kindle       |
+| CC         |      E     |  1505     | Kindle       |
+| CC         |      E     |  1446     | Kindle       |
+| IP  |      E      |  53 |  Printed | 
+| IP  |      E      |  93 |  Printed |
+
 ### Parameter Names
 
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Methods](#methods) > [This section](#parameter-names)
@@ -2550,6 +2675,13 @@ METHOD get_name.
   name = me->name.
 ENDMETHOD.
 ```
+
+| Buch       | Sprache    |  Seite    | Buchfomat    |
+|------------|------------|-----------|--------------|
+| CC         |      E     |  1527     | Kindle       |
+| CC         |      E     |  1393     | Kindle       |
+| IP  |      E      |  79 | Printed |
+| IP  |      E      |  53 |  Printed |
 
 In these cases, simply call the parameter `RESULT`, or something like `RV_RESULT` if you prefer Hungarian notation.
 
@@ -2587,6 +2719,13 @@ ENDMETHOD.
 
 > Code inspector and Checkman point out `EXPORTING` variables that are never written.
 Use these static checks to avoid this otherwise rather obscure error source.
+
+| Buch       | Sprache    |  Seite    | Buchfomat    |
+|------------|------------|-----------|--------------|
+| CC         |      E     |  1527     | Kindle       |
+| CC         |      E     |  1393     | Kindle       |
+| CC         |      E     |  1430     | Kindle       |
+| IP  |      E      |  61 |  Printed | 
 
 ##### Take care if input and output could be the same
 
@@ -2669,6 +2808,10 @@ A method likely does one thing if
 - you cannot extract meaningful other methods
 - you cannot meaningfully group its statements into sections
 
+| Buch       | Sprache    |  Seite    | Buchfomat    |
+|------------|------------|-----------|--------------|
+| CC         |      E     |  1306     | Kindle       |
+
 #### Focus on the happy path or error handling, but not both
 
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Methods](#methods) > [Method Body](#method-body) > [This section](#focus-on-the-happy-path-or-error-handling-but-not-both)
@@ -2738,6 +2881,12 @@ METHOD append_xs_without_check.
 ENDMETHOD.
 ```
 
+| Buch       | Sprache    |  Seite    | Buchfomat    |
+|------------|------------|-----------|--------------|
+| CC         |      E     |  1306     | Kindle       |
+| CC         |      E     |  1597     | Kindle       |
+| IP  |      E      |  77 |  Printed | 
+
 #### Descend one level of abstraction
 
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Methods](#methods) > [Method Body](#method-body) > [This section](#descend-one-level-of-abstraction)
@@ -2767,6 +2916,12 @@ ENDMETHOD.
 A reliable way to find out what the right level of abstraction is is this:
 Let the method's author explain what the method does in few, short words, without looking at the code.
 The bullets (s)he numbers are the sub-methods the method should call or the statements it should execute.
+
+| Buch       | Sprache    |  Seite    | Buchfomat    |
+|------------|------------|-----------|--------------|
+| CC         |      E     |  1333     | Kindle       |
+| CC         |      E     |  1326     | Kindle       |
+| IP  |      E      |  77 |  Printed | 
 
 #### Keep methods small
 
@@ -2842,6 +2997,12 @@ ENDMETHOD.
 
 > Cutting methods very small can have bad impact on performance because it increases the number of method calls.
 > The [section _Mind the performance_](#mind-the-performance) gives guidance on how to balance Clean Code and performance.
+
+| Buch       | Sprache    |  Seite    | Buchfomat    |
+|------------|------------|-----------|--------------|
+| CC         |      E     |  1306    | Kindle       |
+| CC         |      E     |  1270    | Kindle       |
+| IP  |      E      |  77 |  Printed | 
 
 ### Control flow
 
@@ -3013,6 +3174,10 @@ Return codes require you to devise a different solution on your own, such as als
 - The environment reminds the caller with syntax errors to handle exceptions.
 Return codes can be accidentally ignored without anybody noticing.
 
+| Buch       | Sprache    |  Seite    | Buchfomat    |
+|------------|------------|-----------|--------------|
+| CC         |      E     |  1562    | Kindle       |
+
 #### Don't let failures slip through
 
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Error Handling](#error-handling) > [Return Codes](#return-codes) > [This section](#dont-let-failures-slip-through)
@@ -3035,6 +3200,10 @@ IF response-type = 'E'.
   RAISE EXCEPTION NEW /clean/some_error( );
 ENDIF.
 ```
+| Buch       | Sprache    |  Seite    | Buchfomat    |
+|------------|------------|-----------|--------------|
+| CC         |      E     |  1562    | Kindle       |
+| CC         |      E     |  1571    | Kindle       |
 
 ### Exceptions
 
