@@ -1482,6 +1482,10 @@ ELSE.
   " do some magic
 ENDIF.
 ```
+| Buch  |      Sprache      |  Seite | Buchfomat |
+|------------|------------|-----------|--------------|
+| IP  |      E      |  64 |  Printed | 
+| IP  |      E      |  70 |  Printed |  
 
 ### Prefer CASE to ELSE IF for multiple alternative conditions
 
@@ -1514,6 +1518,16 @@ ELSE.
   RAISE EXCEPTION NEW /dirty/unknown_type_failure( ).
 ENDIF.
 ```
+| Buch  |      Sprache      |  Seite | Buchfomat |
+|------------|------------|-----------|--------------|
+| IP  |      E      |  64 |  Printed | 
+| IP  |      E      |  70 |  Printed |  
+
+| Smell Code |  Beschreibung   |  Refactorisierung |
+|------------|-----------------------|-------------|
+| Repeated Switches   | Zu viele logische Bedingungen. Main Flow ist nicht mehr von Exceptional Flow zu unterscheiden. 
+                       Es führt zu langen Methoden, die warscheinlich später SRP brechen.| Replace Conditional with Polymorphism |
+| Primitive Obsession | Es wird nach Type Codes geprüft, anstatt von Objekten zu verwenden| Replace Primitive with Object/Replace Type Code with Subclasses |
 
 ### Keep the nesting depth low
 
@@ -1550,6 +1564,10 @@ instead of the needlessly nested
 IF <this>.
   IF <that>.
 ```
+| Buch  |      Sprache      |  Seite | Buchfomat |
+|------------|------------|-----------|--------------|
+| IP  |      E      |  64 |  Printed | 
+| IP  |      E      |  70 |  Printed |  
 
 ## Regular expressions
 
