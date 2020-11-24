@@ -208,8 +208,8 @@ The [Cheat Sheet](cheat-sheet/CheatSheet.md) is a print-optimized version.
     - [Name the code under test meaningfully, or default to CUT](#name-the-code-under-test-meaningfully-or-default-to-cut)
     - [Test against interfaces, not implementations](#test-against-interfaces-not-implementations)
     - [Extract the call to the code under test to its own method](#extract-the-call-to-the-code-under-test-to-its-own-method)
-  - [Injection](#injection)
-    - [Use dependency inversion to inject test doubles](#use-dependency-inversion-to-inject-test-doubles)
+  - [Injection](#injection) 
+    - [Use dependency inversion to inject test doubles](#use-dependency-inversion-to-inject-test-doubles) ADE127
     - [Consider to use the tool ABAP test double](#consider-to-use-the-tool-abap-test-double)
     - [Exploit the test tools](#exploit-the-test-tools)
     - [Use test seams as temporary workaround](#use-test-seams-as-temporary-workaround)
