@@ -2121,6 +2121,7 @@ and repeating the parameter name may further understandability:
 car->drive( speed = 50 ).
 update( asynchronous = abap_true ).
 ```
+| CC  |      E      |  1496 | Kindle |
 
 #### Omit the self-reference me when calling an instance method
 
@@ -2225,6 +2226,13 @@ Many parameters are an indicator that the method may do more than one thing.
 
 You can reduce the number of parameters by combining them into meaningful sets with structures and objects.
 
+| CC  |      E      |  1419 | Kindle |
+| CC  |      E      |  1430 | Kindle |
+| CC  |      E      |  1453 | Kindle |
+| CC  |      E      |  1471 | Kindle |
+| CC  |      E      |  1479 | Kindle |
+
+
 #### Split methods instead of adding OPTIONAL parameters
 
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Methods](#methods) > [Parameter Number](#parameter-number) > [This section](#split-methods-instead-of-adding-optional-parameters)
@@ -2252,6 +2260,8 @@ Optional parameters confuse callers:
 
 Multiple methods with specific parameters for the use case avoid this confusion by giving clear guidance which parameter combinations are valid and expected.
 
+| CC  |      E      |  1306 | Kindle |
+
 #### Use PREFERRED PARAMETER sparingly
 
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Methods](#methods) > [Parameter Number](#parameter-number) > [This section](#use-preferred-parameter-sparingly)
@@ -2260,6 +2270,12 @@ The addition `PREFERRED PARAMETER` makes it hard to see which parameter is actua
 making it harder to understand the code.
 Minimizing the number of parameters, especially optional ones,
 automatically reduces the need for `PREFERRED PARAMETER`.
+
+| CC  |      E      |  1419 | Kindle |
+| CC  |      E      |  1430 | Kindle |
+| CC  |      E      |  1453 | Kindle |
+| CC  |      E      |  1471 | Kindle |
+| CC  |      E      |  1479 | Kindle |
 
 #### RETURN, EXPORT, or CHANGE exactly one parameter
 
