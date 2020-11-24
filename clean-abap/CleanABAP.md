@@ -2259,7 +2259,7 @@ You can reduce the number of parameters by combining them into meaningful sets w
 | CC  |      E      |  1471 | Kindle |
 | CC  |      E      |  1479 | Kindle |
 | CC  |      E      |  1393 | Kindle |
-
+| CC  |      E      |  1487 | Kindle |
 
 #### Split methods instead of adding OPTIONAL parameters
 
@@ -2428,6 +2428,7 @@ it also allows method chaining and prevents [same-input-and-output errors](#take
 | CC  |      E      |  1430 | Kindle |
 | CC  |      E      |  1306 | Kindle |
 | CC  |      E      |  1527 | Kindle |
+| CC  |      E      |  1542 | Kindle |
 
 #### RETURNING large tables is usually okay
 
@@ -2470,6 +2471,11 @@ get_large_table( IMPORTING result = DATA(my_table) ).
 > both of whom suggest that large tables should be EXPORTED by reference to avoid performance deficits.
 > We consistently failed to reproduce any performance and memory deficits
 > and received notice about kernel optimization that generally improves RETURNING performance.
+
+| Buch  |      Sprache      |  Seite | Buchfomat |
+|------------|------------|-----------|--------------|
+| CC  |      E      |  1527 | Kindle |
+| CC  |      E      |  1430 | Kindle |
 
 #### Use either RETURNING or EXPORTING or CHANGING, but not a combination
 
@@ -2523,6 +2529,10 @@ METHODS build_tree
   RETURNING
     VALUE(result) TYPE REF TO tree.
 ```
+| Buch  |      Sprache      |  Seite | Buchfomat |
+|------------|------------|-----------|--------------|
+| CC  |      E      |  1527 | Kindle |
+| CC  |      E      |  1542 | Kindle |
 
 #### Use CHANGING sparingly, where suited
 
@@ -2547,6 +2557,12 @@ ENDMETHOD.
 
 Do not force your callers to introduce unnecessary local variables only to supply your `CHANGING` parameter.
 Do not use `CHANGING` parameters to initially fill a previously empty variable.
+
+| Buch  |      Sprache      |  Seite | Buchfomat |
+|------------|------------|-----------|--------------|
+| CC  |      E      |  1527 | Kindle |
+| CC  |      E      |  1505 | Kindle |
+| CC  |      E      |  1430 | Kindle |
 
 #### Split method instead of Boolean input parameter
 
@@ -2591,6 +2607,12 @@ METHODS set_is_deleted
 > [2](https://silkandspinach.net/2004/07/15/avoid-boolean-parameters/)
 > [3](http://jlebar.com/2011/12/16/Boolean_parameters_to_API_functions_considered_harmful..html)
 
+| Buch       | Sprache    |  Seite    | Buchfomat    |
+|------------|------------|-----------|--------------|
+| CC         |      E     |  1527     | Kindle       |
+| CC         |      E     |  1505     | Kindle       |
+| CC         |      E     |  1446     | Kindle       |
+
 ### Parameter Names
 
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Methods](#methods) > [This section](#parameter-names)
@@ -2614,6 +2636,11 @@ METHOD get_name.
   name = me->name.
 ENDMETHOD.
 ```
+
+| Buch       | Sprache    |  Seite    | Buchfomat    |
+|------------|------------|-----------|--------------|
+| CC         |      E     |  1527     | Kindle       |
+| CC         |      E     |  1393     | Kindle       |
 
 In these cases, simply call the parameter `RESULT`, or something like `RV_RESULT` if you prefer Hungarian notation.
 
@@ -2651,6 +2678,12 @@ ENDMETHOD.
 
 > Code inspector and Checkman point out `EXPORTING` variables that are never written.
 Use these static checks to avoid this otherwise rather obscure error source.
+
+| Buch       | Sprache    |  Seite    | Buchfomat    |
+|------------|------------|-----------|--------------|
+| CC         |      E     |  1527     | Kindle       |
+| CC         |      E     |  1393     | Kindle       |
+| CC         |      E     |  1430     | Kindle       |
 
 ##### Take care if input and output could be the same
 
@@ -2733,6 +2766,10 @@ A method likely does one thing if
 - you cannot extract meaningful other methods
 - you cannot meaningfully group its statements into sections
 
+| Buch       | Sprache    |  Seite    | Buchfomat    |
+|------------|------------|-----------|--------------|
+| CC         |      E     |  1306     | Kindle       |
+
 #### Focus on the happy path or error handling, but not both
 
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Methods](#methods) > [Method Body](#method-body) > [This section](#focus-on-the-happy-path-or-error-handling-but-not-both)
@@ -2802,6 +2839,12 @@ METHOD append_xs_without_check.
 ENDMETHOD.
 ```
 
+| Buch       | Sprache    |  Seite    | Buchfomat    |
+|------------|------------|-----------|--------------|
+| CC         |      E     |  1306     | Kindle       |
+| CC         |      E     |  1597     | Kindle       |
+
+
 #### Descend one level of abstraction
 
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Methods](#methods) > [Method Body](#method-body) > [This section](#descend-one-level-of-abstraction)
@@ -2831,6 +2874,11 @@ ENDMETHOD.
 A reliable way to find out what the right level of abstraction is is this:
 Let the method's author explain what the method does in few, short words, without looking at the code.
 The bullets (s)he numbers are the sub-methods the method should call or the statements it should execute.
+
+| Buch       | Sprache    |  Seite    | Buchfomat    |
+|------------|------------|-----------|--------------|
+| CC         |      E     |  1333     | Kindle       |
+| CC         |      E     |  1326     | Kindle       |
 
 #### Keep methods small
 
@@ -2906,6 +2954,11 @@ ENDMETHOD.
 
 > Cutting methods very small can have bad impact on performance because it increases the number of method calls.
 > The [section _Mind the performance_](#mind-the-performance) gives guidance on how to balance Clean Code and performance.
+
+| Buch       | Sprache    |  Seite    | Buchfomat    |
+|------------|------------|-----------|--------------|
+| CC         |      E     |  1306    | Kindle       |
+| CC         |      E     |  1270    | Kindle       |
 
 ### Control flow
 
@@ -3077,6 +3130,10 @@ Return codes require you to devise a different solution on your own, such as als
 - The environment reminds the caller with syntax errors to handle exceptions.
 Return codes can be accidentally ignored without anybody noticing.
 
+| Buch       | Sprache    |  Seite    | Buchfomat    |
+|------------|------------|-----------|--------------|
+| CC         |      E     |  1562    | Kindle       |
+
 #### Don't let failures slip through
 
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Error Handling](#error-handling) > [Return Codes](#return-codes) > [This section](#dont-let-failures-slip-through)
@@ -3099,6 +3156,10 @@ IF response-type = 'E'.
   RAISE EXCEPTION NEW /clean/some_error( );
 ENDIF.
 ```
+| Buch       | Sprache    |  Seite    | Buchfomat    |
+|------------|------------|-----------|--------------|
+| CC         |      E     |  1562    | Kindle       |
+| CC         |      E     |  1571    | Kindle       |
 
 ### Exceptions
 
