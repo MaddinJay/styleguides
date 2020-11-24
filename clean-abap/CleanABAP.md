@@ -2226,6 +2226,8 @@ Many parameters are an indicator that the method may do more than one thing.
 
 You can reduce the number of parameters by combining them into meaningful sets with structures and objects.
 
+| Buch  |      Sprache      |  Seite | Buchfomat |
+|------------|------------|-----------|--------------|
 | CC  |      E      |  1419 | Kindle |
 | CC  |      E      |  1430 | Kindle |
 | CC  |      E      |  1453 | Kindle |
@@ -2260,6 +2262,8 @@ Optional parameters confuse callers:
 
 Multiple methods with specific parameters for the use case avoid this confusion by giving clear guidance which parameter combinations are valid and expected.
 
+| Buch  |      Sprache      |  Seite | Buchfomat |
+|------------|------------|-----------|--------------|
 | CC  |      E      |  1306 | Kindle |
 
 #### Use PREFERRED PARAMETER sparingly
@@ -2271,6 +2275,8 @@ making it harder to understand the code.
 Minimizing the number of parameters, especially optional ones,
 automatically reduces the need for `PREFERRED PARAMETER`.
 
+| Buch  |      Sprache      |  Seite | Buchfomat |
+|------------|------------|-----------|--------------|
 | CC  |      E      |  1419 | Kindle |
 | CC  |      E      |  1430 | Kindle |
 | CC  |      E      |  1453 | Kindle |
