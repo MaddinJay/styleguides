@@ -1492,6 +1492,7 @@ ENDIF.
 |------------|-----------------------|-------------|
 | Conditional/Repeated Code   | Conditionals, die kein Programmier-Flow besitzen und oft mehrmals im Code vorkommen. | Replace Conditional with Polymorphism/Introduce Null Object(Introduce Special Case) |
 | Primitive Obsession | Es wird nach Type Codes geprüft, anstatt von Objekten zu verwenden| Replace Primitive with Object/Replace Type Code with Subclasses |
+| Dead Code | Unter Umständen einige Zweige werden niemals durchgelaufen| Remoce Dead Code |
 
 ### Prefer CASE to ELSE IF for multiple alternative conditions
 
