@@ -2076,6 +2076,12 @@ aggregate_values(
     result = DATA(sum) ).
 ```
 
+| Buch  |      Sprache      |  Seite | Buchfomat |
+|------------|------------|-----------|--------------|
+| CC  |      E      |  1527 | Kindle |
+| CC  |      E      |  1496 | Kindle |
+| CC  |      E      |  1430 | Kindle |
+
 #### Omit the optional keyword EXPORTING
 
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Methods](#methods) > [Calls](#calls) > [This section](#omit-the-optional-keyword-exporting)
@@ -2099,6 +2105,10 @@ modify->update(
     changed_fields = changed_fields ).
 ```
 
+| Buch  |      Sprache      |  Seite | Buchfomat |
+|------------|------------|-----------|--------------|
+| CC  |      E      |  1527 | Kindle |
+
 #### Omit the parameter name in single parameter calls
 
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Methods](#methods) > [Calls](#calls) > [This section](#omit-the-parameter-name-in-single-parameter-calls)
@@ -2121,7 +2131,11 @@ and repeating the parameter name may further understandability:
 car->drive( speed = 50 ).
 update( asynchronous = abap_true ).
 ```
+
+| Buch  |      Sprache      |  Seite | Buchfomat |
+|------------|------------|-----------|--------------|
 | CC  |      E      |  1496 | Kindle |
+| CC  |      E      |  1430 | Kindle |
 
 #### Omit the self-reference me when calling an instance method
 
@@ -2139,6 +2153,10 @@ instead of the needlessly longer
 " anti-pattern
 DATA(sum) = me->aggregate_values( values ).
 ```
+
+| Buch  |      Sprache      |  Seite | Buchfomat |
+|------------|------------|-----------|--------------|
+| CC  |      E      |  1496 | Kindle |
 
 ### Methods: Object orientation
 
@@ -2164,6 +2182,11 @@ CLASS-METHODS create_instance
     VALUE(result) TYPE REF TO /clean/blog_post.
 ```
 
+| Buch  |      Sprache      |  Seite | Buchfomat |
+|------------|------------|-----------|--------------|
+| CC  |      E      |  1496 | Kindle |
+
+
 #### Public instance methods should be part of an interface
 
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Methods](#methods) > [Methods: Object orientation](#methods-object-orientation) > [This section](#public-instance-methods-should-be-part-of-an-interface)
@@ -2181,6 +2204,8 @@ which will never have an alternative implementation and will never be mocked in 
 
 > [Interfaces vs. abstract classes](sub-sections/InterfacesVsAbstractClasses.md)
 describes why this also applies to classes that overwrite inherited methods.
+
+
 
 ### Parameter Number
 
@@ -2233,6 +2258,7 @@ You can reduce the number of parameters by combining them into meaningful sets w
 | CC  |      E      |  1453 | Kindle |
 | CC  |      E      |  1471 | Kindle |
 | CC  |      E      |  1479 | Kindle |
+| CC  |      E      |  1393 | Kindle |
 
 
 #### Split methods instead of adding OPTIONAL parameters
@@ -2265,6 +2291,8 @@ Multiple methods with specific parameters for the use case avoid this confusion 
 | Buch  |      Sprache      |  Seite | Buchfomat |
 |------------|------------|-----------|--------------|
 | CC  |      E      |  1306 | Kindle |
+| CC  |      E      | 3415  | Kindle |
+| CC  |      E      |  1393 | Kindle |
 
 #### Use PREFERRED PARAMETER sparingly
 
@@ -2282,6 +2310,7 @@ automatically reduces the need for `PREFERRED PARAMETER`.
 | CC  |      E      |  1453 | Kindle |
 | CC  |      E      |  1471 | Kindle |
 | CC  |      E      |  1479 | Kindle |
+| CC  |      E      |  1393 | Kindle |
 
 #### RETURN, EXPORT, or CHANGE exactly one parameter
 
@@ -2349,6 +2378,12 @@ METHODS check_and_report
     VALUE(result)     TYPE check_result.
 ```
 
+| Buch  |      Sprache      |  Seite | Buchfomat |
+|------------|------------|-----------|--------------|
+| CC  |      E      |  1419 | Kindle |
+| CC  |      E      |  1430 | Kindle |
+| CC  |      E      |  1306 | Kindle |
+
 ### Parameter Types
 
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Methods](#methods) > [This section](#parameter-types)
@@ -2386,6 +2421,13 @@ square(
 
 `RETURNING` not only makes the call shorter,
 it also allows method chaining and prevents [same-input-and-output errors](#take-care-if-input-and-output-could-be-the-same).
+
+| Buch  |      Sprache      |  Seite | Buchfomat |
+|------------|------------|-----------|--------------|
+| CC  |      E      |  1419 | Kindle |
+| CC  |      E      |  1430 | Kindle |
+| CC  |      E      |  1306 | Kindle |
+| CC  |      E      |  1527 | Kindle |
 
 #### RETURNING large tables is usually okay
 
