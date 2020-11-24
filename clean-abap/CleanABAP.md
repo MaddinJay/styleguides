@@ -2081,6 +2081,11 @@ aggregate_values(
 | CC  |      E      |  1527 | Kindle |
 | CC  |      E      |  1496 | Kindle |
 | CC  |      E      |  1430 | Kindle |
+| IP  |      E      |  79 | Printed |
+| IP  |      E      |  84 | Printed |
+| IP  |      E      |  95 | Printed | 
+| IP  |      E      |  91 | Printed |
+
 
 #### Omit the optional keyword EXPORTING
 
@@ -2108,6 +2113,11 @@ modify->update(
 | Buch  |      Sprache      |  Seite | Buchfomat |
 |------------|------------|-----------|--------------|
 | CC  |      E      |  1527 | Kindle |
+| IP  |      E      |  79 | Printed |
+| IP  |      E      |  84 | Printed |
+| IP  |      E      |  95 | Printed | 
+| IP  |      E      |  91 | Printed |
+
 
 #### Omit the parameter name in single parameter calls
 
@@ -2136,6 +2146,9 @@ update( asynchronous = abap_true ).
 |------------|------------|-----------|--------------|
 | CC  |      E      |  1496 | Kindle |
 | CC  |      E      |  1430 | Kindle |
+| IP  |      E      |  79 | Printed |
+| IP  |      E      |  53 | Printed |
+| IP  |      E      |  57 |  Printed |
 
 #### Omit the self-reference me when calling an instance method
 
@@ -2157,6 +2170,8 @@ DATA(sum) = me->aggregate_values( values ).
 | Buch  |      Sprache      |  Seite | Buchfomat |
 |------------|------------|-----------|--------------|
 | CC  |      E      |  1496 | Kindle |
+| CC  |      E      |  1326 | Kindle |
+| IP  |      E      |  57 |  Printed | 
 
 ### Methods: Object orientation
 
@@ -2185,6 +2200,7 @@ CLASS-METHODS create_instance
 | Buch  |      Sprache      |  Seite | Buchfomat |
 |------------|------------|-----------|--------------|
 | CC  |      E      |  1496 | Kindle |
+| IP  |      E      |  81 |  Printed | 
 
 
 #### Public instance methods should be part of an interface
@@ -2205,7 +2221,8 @@ which will never have an alternative implementation and will never be mocked in 
 > [Interfaces vs. abstract classes](sub-sections/InterfacesVsAbstractClasses.md)
 describes why this also applies to classes that overwrite inherited methods.
 
-
+| IP  |      E      |  26 |  Printed | 
+| IP  |      E      |  83 |  Printed | 
 
 ### Parameter Number
 
@@ -2260,6 +2277,9 @@ You can reduce the number of parameters by combining them into meaningful sets w
 | CC  |      E      |  1479 | Kindle |
 | CC  |      E      |  1393 | Kindle |
 | CC  |      E      |  1487 | Kindle |
+| IP  |      E      |  53 |  Printed |
+| IP  |      E      |  57 |  Printed | 
+| IP  |      E      |  79 | Printed |
 
 #### Split methods instead of adding OPTIONAL parameters
 
@@ -2291,8 +2311,9 @@ Multiple methods with specific parameters for the use case avoid this confusion 
 | Buch  |      Sprache      |  Seite | Buchfomat |
 |------------|------------|-----------|--------------|
 | CC  |      E      |  1306 | Kindle |
-| CC  |      E      | 3415  | Kindle |
+| CC  |      E      |  3415 | Kindle |
 | CC  |      E      |  1393 | Kindle |
+| IP  |      E      |  56 | Printed |
 
 #### Use PREFERRED PARAMETER sparingly
 
@@ -2311,6 +2332,8 @@ automatically reduces the need for `PREFERRED PARAMETER`.
 | CC  |      E      |  1471 | Kindle |
 | CC  |      E      |  1479 | Kindle |
 | CC  |      E      |  1393 | Kindle |
+| IP  |      E      |  53 |  Printed |
+| IP  |      E      |  57 |  Printed | 
 
 #### RETURN, EXPORT, or CHANGE exactly one parameter
 
@@ -2383,6 +2406,10 @@ METHODS check_and_report
 | CC  |      E      |  1419 | Kindle |
 | CC  |      E      |  1430 | Kindle |
 | CC  |      E      |  1306 | Kindle |
+| IP  |      E      |  95 | Printed | 
+| IP  |      E      |  93 |  Printed | 
+| IP  |      E      |  87 |  Printed |
+| IP  |      E      |  91 | Printed |
 
 ### Parameter Types
 
@@ -2429,6 +2456,8 @@ it also allows method chaining and prevents [same-input-and-output errors](#take
 | CC  |      E      |  1306 | Kindle |
 | CC  |      E      |  1527 | Kindle |
 | CC  |      E      |  1542 | Kindle |
+| IP  |      E      |  84 | Printed |
+| IP  |      E      |  79 | Printed |
 
 #### RETURNING large tables is usually okay
 
@@ -2476,6 +2505,9 @@ get_large_table( IMPORTING result = DATA(my_table) ).
 |------------|------------|-----------|--------------|
 | CC  |      E      |  1527 | Kindle |
 | CC  |      E      |  1430 | Kindle |
+| IP  |      E      |  95 | Printed | 
+| IP  |      E      |  91 | Printed | 
+| IP  |      E      |  84 | Printed | 
 
 #### Use either RETURNING or EXPORTING or CHANGING, but not a combination
 
@@ -2533,6 +2565,7 @@ METHODS build_tree
 |------------|------------|-----------|--------------|
 | CC  |      E      |  1527 | Kindle |
 | CC  |      E      |  1542 | Kindle |
+| IP  |      E      |  79 | Printed |
 
 #### Use CHANGING sparingly, where suited
 
@@ -2563,6 +2596,8 @@ Do not use `CHANGING` parameters to initially fill a previously empty variable.
 | CC  |      E      |  1527 | Kindle |
 | CC  |      E      |  1505 | Kindle |
 | CC  |      E      |  1430 | Kindle |
+| IP  |      E      |  53 |  Printed | 
+| IP  |      E      |  57 |  Printed | 
 
 #### Split method instead of Boolean input parameter
 
@@ -2612,6 +2647,8 @@ METHODS set_is_deleted
 | CC         |      E     |  1527     | Kindle       |
 | CC         |      E     |  1505     | Kindle       |
 | CC         |      E     |  1446     | Kindle       |
+| IP  |      E      |  53 |  Printed | 
+| IP  |      E      |  93 |  Printed |
 
 ### Parameter Names
 
@@ -2641,6 +2678,8 @@ ENDMETHOD.
 |------------|------------|-----------|--------------|
 | CC         |      E     |  1527     | Kindle       |
 | CC         |      E     |  1393     | Kindle       |
+| IP  |      E      |  79 | Printed |
+| IP  |      E      |  53 |  Printed |
 
 In these cases, simply call the parameter `RESULT`, or something like `RV_RESULT` if you prefer Hungarian notation.
 
@@ -2684,6 +2723,7 @@ Use these static checks to avoid this otherwise rather obscure error source.
 | CC         |      E     |  1527     | Kindle       |
 | CC         |      E     |  1393     | Kindle       |
 | CC         |      E     |  1430     | Kindle       |
+| IP  |      E      |  61 |  Printed | 
 
 ##### Take care if input and output could be the same
 
@@ -2843,7 +2883,7 @@ ENDMETHOD.
 |------------|------------|-----------|--------------|
 | CC         |      E     |  1306     | Kindle       |
 | CC         |      E     |  1597     | Kindle       |
-
+| IP  |      E      |  77 |  Printed | 
 
 #### Descend one level of abstraction
 
@@ -2879,6 +2919,7 @@ The bullets (s)he numbers are the sub-methods the method should call or the stat
 |------------|------------|-----------|--------------|
 | CC         |      E     |  1333     | Kindle       |
 | CC         |      E     |  1326     | Kindle       |
+| IP  |      E      |  77 |  Printed | 
 
 #### Keep methods small
 
@@ -2959,6 +3000,7 @@ ENDMETHOD.
 |------------|------------|-----------|--------------|
 | CC         |      E     |  1306    | Kindle       |
 | CC         |      E     |  1270    | Kindle       |
+| IP  |      E      |  77 |  Printed | 
 
 ### Control flow
 
