@@ -140,18 +140,18 @@ The [Cheat Sheet](cheat-sheet/CheatSheet.md) is a print-optimized version.
   - [Messages](#messages)
     - [Make messages easy to find](#make-messages-easy-to-find)
   - [Return Codes](#return-codes)
-    - [Prefer exceptions to return codes](#prefer-exceptions-to-return-codes)
+    - [Prefer exceptions to return codes](#prefer-exceptions-to-return-codes) CCE104
     - [Don't let failures slip through](#dont-let-failures-slip-through)
   - [Exceptions](#exceptions)
-    - [Exceptions are for errors, not for regular cases](#exceptions-are-for-errors-not-for-regular-cases)
+    - [Exceptions are for errors, not for regular cases](#exceptions-are-for-errors-not-for-regular-cases) CCE109, IPE72
     - [Use class-based exceptions](#use-class-based-exceptions)
   - [Throwing](#throwing)
     - [Use own super classes](#use-own-super-classes)
-    - [Throw one type of exception](#throw-one-type-of-exception)
-    - [Use sub-classes to enable callers to distinguish error situations](#use-sub-classes-to-enable-callers-to-distinguish-error-situations)
-    - [Throw CX_STATIC_CHECK for manageable exceptions](#throw-cx_static_check-for-manageable-exceptions)
-    - [Throw CX_NO_CHECK for usually unrecoverable situations](#throw-cx_no_check-for-usually-unrecoverable-situations)
-    - [Consider CX_DYNAMIC_CHECK for avoidable exceptions](#consider-cx_dynamic_check-for-avoidable-exceptions)
+    - [Throw one type of exception](#throw-one-type-of-exception) ADE124
+    - [Use sub-classes to enable callers to distinguish error situations](#use-sub-classes-to-enable-callers-to-distinguish-error-situations) CCE107, IPE73
+    - [Throw CX_STATIC_CHECK for manageable exceptions](#throw-cx_static_check-for-manageable-exceptions) IPE7, Exception Classes
+    - [Throw CX_NO_CHECK for usually unrecoverable situations](#throw-cx_no_check-for-usually-unrecoverable-situations) Exception Classes
+    - [Consider CX_DYNAMIC_CHECK for avoidable exceptions](#consider-cx_dynamic_check-for-avoidable-exceptions) CCE106, Exception Classes
     - [Dump for totally unrecoverable situations](#dump-for-totally-unrecoverable-situations)
     - [Prefer RAISE EXCEPTION NEW to RAISE EXCEPTION TYPE](#prefer-raise-exception-new-to-raise-exception-type)
   - [Catching](#catching)
@@ -192,44 +192,44 @@ The [Cheat Sheet](cheat-sheet/CheatSheet.md) is a print-optimized version.
   - [Indent in-line declarations like method calls](#indent-in-line-declarations-like-method-calls)
   - [Don't align type clauses](#dont-align-type-clauses)
 - [Testing](#testing)
-  - [Principles](#principles) CCE121, Right B.I.C.E.P., F.I.R.S.T. (CCE132), RD123, ADE23, TDD, Naming, Test-In-Box, Flow, Pizza
-    - [Write testable code](#write-testable-code) CCE122, RD123
+  - [Principles](#principles)
+    - [Write testable code](#write-testable-code)
     - [Enable others to mock you](#enable-others-to-mock-you)
-    - [Readability rules](#readability-rules) CCE124, CCE18
+    - [Readability rules](#readability-rules)
     - [Don't make copies or write test reports](#dont-make-copies-or-write-test-reports)
     - [Test publics, not private internals](#test-publics-not-private-internals)
     - [Don't obsess about coverage](#dont-obsess-about-coverage)
-  - [Test Classes](#test-classes) IPE29
-    - [Call local test classes by their purpose](#call-local-test-classes-by-their-purpose) CCE25
+  - [Test Classes](#test-classes)
+    - [Call local test classes by their purpose](#call-local-test-classes-by-their-purpose)
     - [Put tests in local classes](#put-tests-in-local-classes)
     - [Put help methods in help classes](#put-help-methods-in-help-classes)
     - [How to execute test classes](#how-to-execute-test-classes)
   - [Code Under Test](#code-under-test)
-    - [Name the code under test meaningfully, or default to CUT](#name-the-code-under-test-meaningfully-or-default-to-cut) CCE17, CCE26, CCE27
+    - [Name the code under test meaningfully, or default to CUT](#name-the-code-under-test-meaningfully-or-default-to-cut)
     - [Test against interfaces, not implementations](#test-against-interfaces-not-implementations)
     - [Extract the call to the code under test to its own method](#extract-the-call-to-the-code-under-test-to-its-own-method)
-  - [Injection](#injection) 
-    - [Use dependency inversion to inject test doubles](#use-dependency-inversion-to-inject-test-doubles) ADE127
+  - [Injection](#injection)
+    - [Use dependency inversion to inject test doubles](#use-dependency-inversion-to-inject-test-doubles)
     - [Consider to use the tool ABAP test double](#consider-to-use-the-tool-abap-test-double)
     - [Exploit the test tools](#exploit-the-test-tools)
-    - [Use test seams as temporary workaround](#use-test-seams-as-temporary-workaround) CCE27
+    - [Use test seams as temporary workaround](#use-test-seams-as-temporary-workaround)
     - [Use LOCAL FRIENDS to access the dependency-inverting constructor](#use-local-friends-to-access-the-dependency-inverting-constructor)
     - [Don't misuse LOCAL FRIENDS to invade the tested code](#dont-misuse-local-friends-to-invade-the-tested-code)
     - [Don't change the productive code to make the code testable](#dont-change-the-productive-code-to-make-the-code-testable)
     - [Don't sub-class to mock methods](#dont-sub-class-to-mock-methods)
     - [Don't mock stuff that's not needed](#dont-mock-stuff-thats-not-needed)
     - [Don't build test frameworks](#dont-build-test-frameworks)
-  - [Test Methods](#test-methods) CCE130, IPE72, IPE83
-    - [Test method names: reflect what's given and expected](#test-method-names-reflect-whats-given-and-expected) CCE25, CCE17
-    - [Use given-when-then](#use-given-when-then) CCE27
-    - ["When" is exactly one call](#when-is-exactly-one-call) CCE130
+  - [Test Methods](#test-methods)
+    - [Test method names: reflect what's given and expected](#test-method-names-reflect-whats-given-and-expected)
+    - [Use given-when-then](#use-given-when-then)
+    - ["When" is exactly one call](#when-is-exactly-one-call)
     - [Don't add a TEARDOWN unless you really need it](#dont-add-a-teardown-unless-you-really-need-it)
   - [Test Data](#test-data)
     - [Make it easy to spot meaning](#make-it-easy-to-spot-meaning)
     - [Make it easy to spot differences](#make-it-easy-to-spot-differences)
     - [Use constants to describe purpose and importance of test data](#use-constants-to-describe-purpose-and-importance-of-test-data)
   - [Assertions](#assertions)
-    - [Few, focused assertions](#few-focused-assertions) CCE130
+    - [Few, focused assertions](#few-focused-assertions)
     - [Use the right assert type](#use-the-right-assert-type)
     - [Assert content, not quantity](#assert-content-not-quantity)
     - [Assert quality, not content](#assert-quality-not-content)
@@ -2121,7 +2121,6 @@ and repeating the parameter name may further understandability:
 car->drive( speed = 50 ).
 update( asynchronous = abap_true ).
 ```
-| CC  |      E      |  1496 | Kindle |
 
 #### Omit the self-reference me when calling an instance method
 
@@ -2226,15 +2225,6 @@ Many parameters are an indicator that the method may do more than one thing.
 
 You can reduce the number of parameters by combining them into meaningful sets with structures and objects.
 
-| Buch  |      Sprache      |  Seite | Buchfomat |
-|------------|------------|-----------|--------------|
-| CC  |      E      |  1419 | Kindle |
-| CC  |      E      |  1430 | Kindle |
-| CC  |      E      |  1453 | Kindle |
-| CC  |      E      |  1471 | Kindle |
-| CC  |      E      |  1479 | Kindle |
-
-
 #### Split methods instead of adding OPTIONAL parameters
 
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Methods](#methods) > [Parameter Number](#parameter-number) > [This section](#split-methods-instead-of-adding-optional-parameters)
@@ -2262,10 +2252,6 @@ Optional parameters confuse callers:
 
 Multiple methods with specific parameters for the use case avoid this confusion by giving clear guidance which parameter combinations are valid and expected.
 
-| Buch  |      Sprache      |  Seite | Buchfomat |
-|------------|------------|-----------|--------------|
-| CC  |      E      |  1306 | Kindle |
-
 #### Use PREFERRED PARAMETER sparingly
 
 > [Clean ABAP](#clean-abap) > [Content](#content) > [Methods](#methods) > [Parameter Number](#parameter-number) > [This section](#use-preferred-parameter-sparingly)
@@ -2274,14 +2260,6 @@ The addition `PREFERRED PARAMETER` makes it hard to see which parameter is actua
 making it harder to understand the code.
 Minimizing the number of parameters, especially optional ones,
 automatically reduces the need for `PREFERRED PARAMETER`.
-
-| Buch  |      Sprache      |  Seite | Buchfomat |
-|------------|------------|-----------|--------------|
-| CC  |      E      |  1419 | Kindle |
-| CC  |      E      |  1430 | Kindle |
-| CC  |      E      |  1453 | Kindle |
-| CC  |      E      |  1471 | Kindle |
-| CC  |      E      |  1479 | Kindle |
 
 #### RETURN, EXPORT, or CHANGE exactly one parameter
 
