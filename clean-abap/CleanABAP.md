@@ -1482,10 +1482,16 @@ ELSE.
   " do some magic
 ENDIF.
 ```
+
 | Buch  |      Sprache      |  Seite | Buchfomat |
 |------------|------------|-----------|--------------|
 | IP  |      E      |  64 |  Printed | 
 | IP  |      E      |  70 |  Printed |  
+
+| Smell Code |  Beschreibung   |  Refactorisierung |
+|------------|-----------------------|-------------|
+| Conditional/Repeated Code   | Conditionals, die kein Programmier-Flow besitzen und oft mehrmals im Code vorkommen. | Replace Conditional with Polymorphism/Introduce Null Object(Introduce Special Case) |
+| Primitive Obsession | Es wird nach Type Codes geprüft, anstatt von Objekten zu verwenden| Replace Primitive with Object/Replace Type Code with Subclasses |
 
 ### Prefer CASE to ELSE IF for multiple alternative conditions
 
