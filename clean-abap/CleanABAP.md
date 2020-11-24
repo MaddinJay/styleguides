@@ -1488,6 +1488,8 @@ ENDIF.
 | IP  |      E      |  64 |  Printed | 
 | IP  |      E      |  70 |  Printed |  
 | CC  |      E      |  1446 |  Printed |  
+| CC  |      E      |  1323 |  Printed |  
+| CC  |      E      |  1306 |  Printed |  
 
 | Smell Code |  Beschreibung   |  Refactorisierung |
 |------------|-----------------------|-------------|
@@ -1532,6 +1534,8 @@ ENDIF.
 | IP  |      E      |  70 |  Printed |  
 | CC  |      E      |  1351 |  Printed |  
 | CC  |      E      |  1446 |  Printed |  
+| CC  |      E      |  1323 |  Printed |  
+| CC  |      E      |  1306 |  Printed |  
 
 | Smell Code |  Beschreibung   |  Refactorisierung |
 |------------|-----------------------|-------------|
@@ -1578,6 +1582,8 @@ IF <this>.
 | IP  |      E      |  64 |  Printed | 
 | IP  |      E      |  70 |  Printed |  
 | CC  |      E      |  1446 |  Printed |  
+| CC  |      E      |  1323 |  Printed |  
+| CC  |      E      |  1306 |  Printed |  
 
 | Smell Code |  Beschreibung   |  Refactorisierung |
 |------------|-----------------------|-------------|
