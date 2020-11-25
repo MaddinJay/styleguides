@@ -46,9 +46,9 @@ The [Cheat Sheet](cheat-sheet/CheatSheet.md) is a print-optimized version.
   - [Avoid obsolete language elements](#avoid-obsolete-language-elements)
   - [Use design patterns wisely](#use-design-patterns-wisely)
 - [Constants](#constants)
-  - [Use constants instead of magic numbers](#use-constants-instead-of-magic-numbers)
-  - [Prefer enumeration classes to constants interfaces](#prefer-enumeration-classes-to-constants-interfaces)
-  - [If you don't use enumeration classes, group your constants](#if-you-dont-use-enumeration-classes-group-your-constants)
+  - [Use constants instead of magic numbers](#use-constants-instead-of-magic-numbers) CCE22, CCE300, RE179, IPE58
+  - [Prefer enumeration classes to constants interfaces](#prefer-enumeration-classes-to-constants-interfaces) CCE19, CCE290, CCE306-308
+  - [If you don't use enumeration classes, group your constants](#if-you-dont-use-enumeration-classes-group-your-constants) CCE136, CCE301, RE133, ADE143
 - [Variables](#variables)
   - [Prefer inline to up-front declarations](#prefer-inline-to-up-front-declarations)
   - [Don't declare inline in optional branches](#dont-declare-inline-in-optional-branches)
