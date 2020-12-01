@@ -766,6 +766,11 @@ is clearer than
 IF abap_type = 'D'.
 ```
 
+> Smell Codes
+
+| Smell Code |  Beschreibung   |  Refactorisierung | Referenz         |
+|------------|-----------------------|-------------|------------------|
+| Naming   | Good names are essentiell for Clean Code. Readers are missleaded by bad names. Names should be clear, constant in the code and should exress the intention of the coder. Maybe the design is not clear if difficult to find. Long names should be avoided. | Rename Field | R D 289|
 > Read more in _Chapter 17: Smells and Heuristics: G25:
 > Replace Magic Numbers with Named Constants_ of [Robert C. Martin's _Clean Code_].
 
@@ -808,6 +813,11 @@ INTERFACE /dirty/common_constants.
     persisted    TYPE i       VALUE 2.
 ENDINTERFACE.
 ```
+> Smell Codes
+
+| Smell Code |  Beschreibung   |  Refactorisierung | Referenz         |
+|------------|-----------------------|-------------|------------------|
+| Data Clumps   | Dependent data should not be spread over the hole code. Dependent data should find same home (structure, class). Focus on symmetrie.  |  Encapsulate Record, Replace Primitive with Object | R D 203 , R D 217|
 
 > [Enumerations](sub-sections/Enumerations.md)
 > describes common enumeration patterns
@@ -859,6 +869,11 @@ DO.
   ENDIF.
 ENDDO.
 ```
+> Smell Codes
+
+| Smell Code |  Beschreibung   |  Refactorisierung | Referenz         |
+|------------|-----------------------|-------------|------------------|
+| Data Clumps   | Dependent data should not be spread over the hole code. Dependent data should find same home (structure, class). Focus on symmetrie.  |  Encapsulate Record, Replace Primitive with Object | R D 203 , R D 217|
 
 > Read more in _Chapter 17: Smells and Heuristics: G27: Structure over Convention_ of [Robert C. Martin's _Clean Code_].
 
